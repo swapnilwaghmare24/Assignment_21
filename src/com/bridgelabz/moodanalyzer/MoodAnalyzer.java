@@ -6,16 +6,26 @@ public class MoodAnalyzer {
     {
         try
         {
-            if (msg == "NULL");
+            if(msg.contains("Sad"))
+                return "Sad";
+            else
+                return "Happy";
         }
-        catch (Exception e)
+        catch (NullPointerException e)
         {
             return "Happy";
         }
+    }
 
+    public String customException(String msg) throws MoodAnaylyzeException
+    {
         if(msg.contains("Sad"))
             return "Sad";
-        else
-            return "Happy";
+        else if (msg.contains("Happy")||msg.contains("Any"))
+           return "Happy";
+
+       else throw new MoodAnaylyzeException("Invalid mood");
+
+
     }
 }

@@ -1,6 +1,7 @@
 package com.bridgelabz.moodanalyzertest;
 
 import com.bridgelabz.moodanalyzer.MoodAnalyzer;
+import com.bridgelabz.moodanalyzer.MoodAnaylyzeException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,5 +33,16 @@ public class MoodAnaylyzerTest {
     {
         String result= moodAnalyzer.analyzeMood("NULL");
         assertEquals("Happy",result);
+    }
+    @Test
+    public void checkCustomException()
+    {
+        try {
+            String result=moodAnalyzer.customException(" ");
+            assertEquals("Sad",result);
+        } catch (MoodAnaylyzeException e) {
+            System.out.println(e);
+        }
+
     }
 }
