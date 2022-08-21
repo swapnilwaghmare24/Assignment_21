@@ -27,4 +27,10 @@ public class MoodAnaylyzerTest {
         String result= moodAnalyzer.analyzeMood("I am in Any mood");
         assertEquals("Happy",result);
     }
+    @Test
+    public void isNullMood()
+    {
+        String result= moodAnalyzer.analyzeMood("NULL");
+        assertEquals("Happy",result);
+    }
 }
